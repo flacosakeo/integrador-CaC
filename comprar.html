@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="./css/style2.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img class="imagen-logo" src="./assets/img/codoacodo.png" alt="logo">
+            <h2>Conf Bs As</h2>
+            <nav>
+                <a href="#">La Conferencia</a>
+                <a href="#" style="color: grey;">Los oradores</a>
+                <a href="#" style="color: grey;">EL lugar y la fecha</a>
+                <a href="#" style="color: grey;">Conviertete en Orador</a>
+                <a href="index.html" style="color: green;"><b>Inicio</b></a>
+            </nav>    
+        </div>        
+    </header>
+    <div id="porcentajes">
+        <div class="descuentos" id="des1">
+            <br><h3>Estudiante</h3><br>
+            <p>Tiene un descuento</p><br>
+            <h1>80%</h1><br><br>
+            <p id="documentacion">* presentar documentación</p>
+        </div>
+        <div class="descuentos" id="des2">
+            <br><h3>Trainee</h3><br>
+            <p>Tiene un descuento</p><br>
+            <h1>50%</h1><br><br>
+            <p id="documentacion">* presentar documentación</p>
+        </div>
+        <div class="descuentos" id="des3">
+            <br><h3>Junior</h3><br>
+            <p>Tiene un descuento</p><br>
+            <h1>15%</h1><br><br>
+            <p id="documentacion">* presentar documentación</p>
+        </div>    
+    </div>
+    <div class="venta">
+        <br><p>VENTA</p><br>
+        <h1>VALOR DEL TICKET $200</h1><br>
+    </div>
+    <div class="formulario">
+        <form id="formul">
+            <input type="text" placeholder="NOMBRE" id="nombre">
+            <input type="text" placeholder="APELLIDO" id="apellido"><br><br>
+            <input type="email" placeholder="MAIL" id="mail"><br><br>           
+            <input type="number" placeholder="CANTIDAD" min="0" max="99" step="1" id="cantidad">
+            <select id="op">
+                <option value="estudiante">Estudiante</option>
+                <option value="trainee">Trainee</option>
+                <option value="junior">Junior</option>                
+            </select><br><br>
+            <input value="Total a pagar $" disabled="true" name="total" id="total"></input><br><br>
+                       
+        </form>        
+        <button id="borrar">Borrar</button>
+        <button id="resumen">Resumen</button> 
+    </div><br>
+    
+    <footer>        
+        <div>
+            <label><a href="#">Preguntas Frecuentes</a></label>
+            <label><a href="#">Contáctanos</a></label> 
+            <label><a href="#">Prensa</a></label> 
+            <label><a href="#">Conferencias</a></label> 
+            <label><a href="#">Términos y Condiciones</a></label> 
+            <label><a href="#">Privacidad</a></label> 
+            <label><a href="#">Estudiantes</a> </label> 
+        </div>
+    </footer>
+    <script src="js/operaciones.js"></script>
+</body>
+</html>
