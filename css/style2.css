@@ -33,7 +33,7 @@ header {
  nav {
     display: inline-block;
     float: right;
-    padding: 25px;
+    padding: 50px;
  }
  a {
     color: white;
@@ -85,7 +85,8 @@ input, select, button{
    
 }
 #nombre, #apellido, #cantidad, #op, button{
-   width:200px
+   width:200px;
+   margin-top: 10px;
 }
 #mail{
    width: 405px;   
