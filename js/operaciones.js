@@ -2,6 +2,7 @@ document.getElementById("borrar").addEventListener("click", ()=>{
     document.getElementById("formul").reset();//el reset limpia todo el formulario, todfos los campos del formulario los limpia
     document.getElementById("total").value="Total a pagar $"
     document.getElementById("resumen").innerHTML="Resumen"
+    document.getElementById("resumen").disabled=false
 })
 //el boton dice resumen y hace segun diga resumen
 document.getElementById("resumen").addEventListener("click", ()=>{  
