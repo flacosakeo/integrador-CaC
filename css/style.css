@@ -1,531 +1,533 @@
-* {
-   margin: 0px;
-   padding: 0px;
-   box-sizing: border-box;
-   zoom: 100%;
-   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+/* ============================================================
+   ESTILOS GENERALES Y VARIABLES DE TEMA
+   ============================================================ */
+:root {
+    --navbar-bg: #212529;
+    --footer-bg: #1c3758;
+    --footer-text: #e2e8f0;
+    --card-bg: #ffffff;
+    --card-border: #e2e8f0;
+    --hero-overlay: rgba(0, 0, 0, 0.65);
+    --honolulu-bg: #2b3035;
+    --accent-color: #28a745;
 }
 
-@media(max-width:1500px){
-   header {
-      background: #353A40;
-      display: inline-block;
-      width: 100%;
-      height: 12%;
-      position: fixed;
-      top: 0;
-      z-index: 10;
-   }
-
-   .logo {
-      display: inherit;
-   }
-
-   .logo img {
-      height: 75px;
-      vertical-align: middle;
-      margin-left: 10px;
-   }
-
-   #texto{
-      position:absolute; 
-      top: 75%; 
-      left:65%; 
-      color: white;
-   }
-
-   h2 {
-      color: rgb(255, 255, 255);
-      display: inline-block;
-   }
-
-   nav {
-      display: inline-block;
-      float: right;
-      padding: 25px;
-   }
-
-   a {
-      color: white;
-      text-decoration: none;
-      padding: 5px;
-   }
-
-   .botton-comprar {
-      color: green;
-   }
-
-   section {
-      height: 100vh;
-      position: relative;
-   }
-
-   section > img {
-      height: 100%;
-      width: 100%;
-   }
-
-   .container-conferencia {
-      width: 50%;
-      position: absolute;
-      top: 50%;
-      right: 30px;
-      text-align: right;
-      color: white;
-   }
-   .first-paragraph{
-      padding: 10px;
-   }
-
-   .enlace-1 {
-      padding: 10px;
-      border: 2px solid white;
-      border-radius: 5px;
-   }
-
-   .enlace-2 {
-      padding: 10px;
-      border-radius: 5px;
-      background-color: green;
-   }
-
-   h3,
-   h4 {
-      text-align: center;
-   }
-
-   .card {
-      width: 200px;
-      display: inline-block;
-      padding: 20px;
-
-   }
-
-   .card img {
-      width: 100%;
-   }
-
-   #lugar {
-      display: flex;
-   }
-
-   #lugar img {
-      width: 50%;
-      height: 50%;
-   }
-
-   textarea{
-      width: 39%;
-   }
-
-   footer{
-      height: 100px; 
-      background-color: #1c3758; 
-      color: aliceblue; 
-      display:flex; 
-      align-items: center; 
-      justify-content: center;
-      word-spacing: 50px;
-   }
-
-   #btn-enviar{
-      width: 39%; 
-      border-radius:5px; 
-      background-color:rgb(129, 214, 1); 
-      border:none; 
-      color: aliceblue;
-   }
+[data-bs-theme="dark"] {
+    --navbar-bg: #18191a;
+    --footer-bg: #0f172a;
+    --footer-text: #cbd5e1;
+    --card-bg: #242526;
+    --card-border: #3a3b3c;
+    --hero-overlay: rgba(0, 0, 0, 0.78);
+    --honolulu-bg: #1e2226;
+    --accent-color: #20c997;
 }
 
-
-@media(max-width:1200px){
-   nav{
-      display:inline-block;      
-      padding: 0;
-      font-size: 18px;
-   }
-   .logo img {
-      height: 80px;
-      vertical-align: middle;
-      margin-left: 5px;
-   }
-   h2 {
-      color: rgb(255, 255, 255);
-      display: inline-block;
-      font-size: 26px;
-   }
-   header {
-      background: #353A40;
-      display: inline-block;
-      width: 100%;
-      height: 20%;
-      position: fixed;
-      top: 0;
-      z-index: 10;
-   }
-   .card {
-      width: auto; 
-      padding: 20px;
-      align-items: center;
-   }
-   #texto{     
-      position:absolute; 
-      top: 40%; 
-      left:65%; 
-      color: white;
-      font-size: 18px;
-   }
-   .btn{
-      margin-bottom: 2px;
-      position:relative;
-      width: auto;
-      align-items: center;
-      font-size: 14px;
-   }
-   .row{
-      display: flex;
-   }
-   .col-6{
-      columns: 1;
-      width: 50%;
-      position: relative;
-      font-size: 18px;
-   }
-   textarea{
-      width: 50%;
-   }
-   footer{      
-      height: 80px; 
-      background-color: #1c3758; 
-      color: aliceblue; 
-      display:block; 
-      align-items: left; 
-      justify-content: left;
-      word-spacing: 0;
-      font-size: 12px;
-   }
-   label{
-      margin: 2%;
-   }   
-   #btn-enviar{
-      width: 50%; 
-      border-radius:5px; 
-      background-color:rgb(129, 214, 1); 
-      border:none; 
-      color: aliceblue;      
-   }
+body {
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 76px; /* Para compensar la navbar fija */
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-
-
-@media(max-width:1000px){
-   nav{
-      display:inline-block;      
-      padding: 0px;
-      font-size: 20px;
-   }
-   .logo img {
-      height: 80px;
-      vertical-align: middle;
-      margin-left: 5px;
-   }
-   h2 {
-      color: rgb(255, 255, 255);
-      display: inline-block;
-      font-size: 26px;
-   }
-   header {
-      background: #353A40;
-      display: inline-block;
-      width: 100%;
-      height: 20%;
-      position: fixed;
-      top: 0;
-      z-index: 10;
-   }
-   .card {
-      width: auto; 
-      padding: 20px;
-      align-items: center;
-   }
-   #texto{     
-      position:absolute; 
-      top: 45%; 
-      left:65%; 
-      color: white;
-      font-size: 16px;
-   }
-   .btn{
-      margin-bottom: 2px;
-      position:relative;
-      width: auto;
-      align-items: center;
-      font-size: 12px;
-   }
-   .row{
-      display: flex;
-   }
-   .col-6{
-      columns: 1;
-      width: 50%;
-      position: relative;
-      font-size: 14px;
-   }
-   textarea{
-      width: 47%;
-   }
-   footer{      
-      height: 80px; 
-      background-color: #1c3758; 
-      color: aliceblue; 
-      display:block; 
-      align-items: left; 
-      justify-content: left;
-      word-spacing: 0;
-      font-size: 12px;
-   }
-   label{
-      margin: 2%;
-   }   
-   #btn-enviar{
-      width: 47%; 
-      border-radius:5px; 
-      background-color:rgb(129, 214, 1); 
-      border:none; 
-      color: aliceblue;      
-   }
+main {
+    flex: 1 0 auto;
 }
 
-@media(max-width:800px){
-   nav{
-      display:block;      
-      padding: 3px;
-      font-size: 16px;
-   }
-   .logo img {
-      height: 50px;
-      vertical-align: middle;
-      margin-left: 5px;
-   }
-   h2 {
-      color: rgb(255, 255, 255);
-      display: inline-block;
-      font-size: 20px;
-   }
-   header {
-      background: #353A40;
-      display: inline-block;
-      width: 100%;
-      height: 15%;
-      position: fixed;
-      top: 0;
-      z-index: 10;
-   }
-   .card {
-      width: auto; 
-      padding: 20px;
-      align-items: center;
-   }
-   #texto{     
-      position:absolute; 
-      top: 35%; 
-      left:65%; 
-      color: white;
-      font-size: 12px;
-   }
-   .btn{
-      margin-bottom: 2px;
-      position:relative;
-      width: auto;
-      align-items: center;
-      font-size: 12px;
-   }
-   .row{
-      display: flex;
-   }
-   .col-6{
-      columns: 1;
-      width: 50%;
-      position: relative;
-      font-size: 14px;
-   }
-   textarea{
-      width: 90%;
-   }
-   footer{      
-      height: 50px; 
-      background-color: #1c3758; 
-      color: aliceblue; 
-      display:block; 
-      align-items: left; 
-      justify-content: left;
-      word-spacing: 0;
-      font-size: 10px;
-   }
-   label{
-      margin: 2%;
-   }   
-   #btn-enviar{
-      width: 90%; 
-      border-radius:5px; 
-      background-color:rgb(129, 214, 1); 
-      border:none; 
-      color: aliceblue;      
-   }
+/* ============================================================
+   BARRA DE NAVEGACIÓN
+   ============================================================ */
+.custom-navbar {
+    background-color: var(--navbar-bg) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+    transition: background-color 0.3s ease;
 }
 
-
-@media(max-width:500px){
-   nav{
-      display:block;      
-      padding: 3px;
-      font-size: 10px;
-   }
-   .logo img {
-      height: 35px;
-      vertical-align: middle;
-      margin-left: 5px;
-   }
-   h2 {
-      color: rgb(255, 255, 255);
-      display: inline-block;
-      font-size: 14px;
-   }
-   header {
-      background: #353A40;
-      display: inline-block;
-      width: 100%;
-      height: 10%;
-      position: fixed;
-      top: 0;
-      z-index: 10;
-   }
-   .card {
-      width: auto; 
-      padding: 20px;
-      align-items: center;
-   }
-   #texto{     
-      position: relative; 
-      columns: 1;
-      width: auto;
-      top:15%;
-      left: 0%;
-      color: black;
-      text-align: justify;
-      border: 1px solid rgb(155, 155, 155);
-      border-radius: 5px;
-      margin-top: 5px;
-   }
-   .btn{
-      margin-bottom: 2px;
-      position:relative;
-      width: auto;
-      align-items: center;
-      font-size: 12px;
-   }
-   .row{
-      display: block;
-   }
-   .col-6{
-      columns: 1;
-      width: auto;
-      position: relative;
-   }
-   textarea{
-      width: 90%;
-   }
-   footer{
-      margin-top: 5%;
-      height: 100px; 
-      background-color: #1c3758; 
-      color: aliceblue;
-      font-size: 12px;
-      word-spacing: 10px;     
-   }
-   label{
-      margin: 2%;
-   }   
-   #btn-enviar{
-      width: 90%; 
-      border-radius:5px; 
-      background-color:rgb(129, 214, 1); 
-      border:none; 
-      color: aliceblue;
-   }
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    font-size: 1.35rem;
 }
 
-
-@media(max-width:360px){
-   nav{
-      display:block;      
-      padding: 1px;
-      font-size: 7px;
-   }
-   .logo img {
-      height: 25px;
-      vertical-align: middle;
-      margin-left: 5px;
-   }
-   h2 {
-      color: rgb(255, 255, 255);
-      display: inline-block;
-      font-size: 12px;
-   }
-   header {
-      background: #353A40;
-      display: inline-block;
-      width: 100%;
-      height: 7%;
-      position: fixed;
-      top: 0;
-      z-index: 10;
-   }
-   .card {
-      width: auto; 
-      padding: 20px;
-      align-items: center;
-   }
-   #texto{     
-      position: relative; 
-      columns: 1;
-      width: auto;
-      top:15%;
-      left: 0%;
-      color: black;
-      text-align: justify;
-      border: 1px solid rgb(155, 155, 155);
-      border-radius: 5px;
-      margin-top: 5px;
-   }
-   .btn{
-      margin-bottom: 2px;
-      position:relative;
-      width: auto;
-      align-items: center;
-      font-size: 12px;
-   }
-   .row{
-      display: block;
-   }
-   .col-6{
-      columns: 1;
-      width: auto;
-      position: relative;
-   }
-   textarea{
-      width: 63%;
-   }
-   footer{
-      
-      height: 100px; 
-      background-color: #1c3758; 
-      color: aliceblue;
-      font-size: 12px;
-      text-align: center;
-      justify-items: center;   
-   }
-   label{
-      margin: 2%;
-   }   
+.logo-img {
+    height: 48px;
+    width: auto;
+    object-fit: contain;
 }
+
+.nav-link {
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+    padding: 0.5rem 0.85rem !important;
+}
+
+.nav-link:hover {
+    color: #ffffff !important;
+}
+
+.nav-link-comprar {
+    color: #28a745 !important;
+    font-weight: 700;
+}
+
+.nav-link-comprar:hover {
+    color: #20c997 !important;
+}
+
+/* ============================================================
+   BANNER PRINCIPAL (HERO)
+   ============================================================ */
+.hero-section {
+    position: relative;
+    min-height: calc(100vh - 76px);
+    background: url('../assets/img/hawaii.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: var(--hero-overlay);
+    backdrop-filter: blur(1.5px);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: #ffffff;
+    max-width: 600px;
+    padding: 2.5rem;
+    margin-right: 5%;
+}
+
+@media (max-width: 991px) {
+    .hero-section {
+        justify-content: center;
+        min-height: auto;
+        padding: 4rem 1rem;
+    }
+    .hero-content {
+        margin-right: 0;
+        text-align: center;
+        padding: 1.5rem;
+    }
+}
+
+/* ============================================================
+   TARJETAS DE ORADORES
+   ============================================================ */
+.speaker-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.speaker-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.speaker-img {
+    height: 280px;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.badge-tag {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.65rem;
+    font-weight: 700;
+}
+
+/* ============================================================
+   SECCIÓN LUGAR Y FECHA (HONOLULU / BS AS)
+   ============================================================ */
+.venue-section {
+    background-color: var(--honolulu-bg);
+    color: #ffffff;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+}
+
+.venue-img-container img {
+    width: 100%;
+    height: 100%;
+    min-height: 380px;
+    object-fit: cover;
+}
+
+.venue-content {
+    padding: 3rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* ============================================================
+   FORMULARIO ORADOR
+   ============================================================ */
+.speaker-form-section {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.form-title-small {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+    color: #6c757d;
+}
+
+.speaker-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* ============================================================
+   PÁGINA COMPRAR TICKETS
+   ============================================================ */
+.discount-card {
+    border: 2px solid;
+    border-radius: 0.5rem;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-width 0.2s ease;
+    height: 100%;
+    background-color: var(--card-bg);
+}
+
+.discount-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.discount-estudiante {
+    border-color: #0d6efd;
+    background-color: rgba(13, 110, 253, 0.06);
+}
+
+.discount-trainee {
+    border-color: #0dcaf0;
+    background-color: rgba(13, 202, 240, 0.06);
+}
+
+.discount-junior {
+    border-color: #ffc107;
+    background-color: rgba(255, 193, 7, 0.06);
+}
+
+.discount-card.tarjeta-activa {
+    border-width: 3px;
+    box-shadow: 0 0 0 4px rgba(13, 110, 253, 0.25);
+    transform: scale(1.02);
+}
+
+.ticket-form-container {
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.input-total {
+    background-color: #cff4fc !important;
+    color: #055160 !important;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border: 1px solid #b6effb !important;
+}
+
+[data-bs-theme="dark"] .input-total {
+    background-color: #055160 !important;
+    color: #cff4fc !important;
+    border: 1px solid #087990 !important;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    padding: 2.5rem 1rem;
+    margin-top: auto;
+    transition: background-color 0.3s ease;
+}
+
+footer a {
+    color: var(--footer-text);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s ease, opacity 0.2s ease;
+    padding: 0.25rem 0.75rem;
+}
+
+footer a:hover {
+    color: #ffffff;
+    opacity: 1;
+    text-decoration: underline;
+}
+
+/* ============================================================
+   BOTÓN CAMBIO DE TEMA
+   ============================================================ */
+.theme-toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    border-radius: 20px;
+    padding: 0.35rem 0.85rem;
+    font-size: 0.85rem;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: transparent;
+    color: #ffffff;
+    transition: all 0.2s ease;
+}
+
+.theme-toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.5);
+    color: #ffffff;
+}
+
+/* ============================================================
+   TICKET ESTILIZADO DE CONFERENCIA
+   ============================================================ */
+.ticket-wrapper {
+    background: #ffffff;
+    color: #1e293b;
+    border-radius: 12px;
+    border: 2px dashed #94a3b8;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    position: relative;
+    max-width: 620px;
+    margin: 0 auto;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+[data-bs-theme="dark"] .ticket-wrapper {
+    background: #1e2227;
+    color: #f1f5f9;
+    border-color: #475569;
+}
+
+.ticket-header {
+    background: linear-gradient(135deg, #1c3758 0%, #0d6efd 100%);
+    color: #ffffff;
+    padding: 1.25rem 1.75rem;
+    position: relative;
+}
+
+.ticket-header .ticket-badge {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 0.25rem 0.65rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.ticket-body {
+    padding: 1.5rem 1.75rem;
+}
+
+.ticket-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    color: #64748b;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+}
+
+[data-bs-theme="dark"] .ticket-label {
+    color: #94a3b8;
+}
+
+.ticket-value {
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.ticket-divider {
+    border-top: 2px dashed #cbd5e1;
+    margin: 1.25rem 0;
+    position: relative;
+}
+
+[data-bs-theme="dark"] .ticket-divider {
+    border-color: #475569;
+}
+
+.ticket-barcode-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.ticket-barcode {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 3px;
+    height: 42px;
+    padding: 4px 12px;
+    background: #ffffff;
+    border-radius: 4px;
+    border: 1px solid #e2e8f0;
+}
+
+.ticket-barcode span {
+    display: inline-block;
+    background-color: #111827;
+    width: 3px;
+    height: 100%;
+}
+
+.ticket-barcode span.thin { width: 1.5px; }
+.ticket-barcode span.thick { width: 5px; }
+.ticket-barcode span.space { width: 4px; background: transparent; }
+
+/* Contenedor exclusivo de impresión en pantalla normal */
+#area-impresion {
+    display: none;
+}
+
+/* ============================================================
+   ESTILOS DE IMPRESIÓN (VISTA PREVIA Y GUARDAR COMO PDF)
+   ============================================================ */
+@media print {
+    @page {
+        margin: 1.2cm;
+        size: portrait;
+    }
+
+    /* Restablecer scroll y visibilidad en html y body */
+    html, body, body.modal-open {
+        overflow: visible !important;
+        position: static !important;
+        background: #ffffff !important;
+        color: #000000 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        height: auto !important;
+        width: 100% !important;
+    }
+
+    /* Ocultar ABSOLUTAMENTE TODO elemento directo del body excepto el contenedor de impresión */
+    body > *:not(#area-impresion) {
+        display: none !important;
+        visibility: hidden !important;
+    }
+
+    /* Garantizar que no se filtren modales, backdrops, cabecera ni pie */
+    header, footer, nav, .navbar, .modal, .modal-backdrop, #formul, #porcentajes, .venta {
+        display: none !important;
+    }
+
+    /* Mostrar única y exclusivamente el área de impresión centrada */
+    #area-impresion {
+        display: block !important;
+        visibility: visible !important;
+        width: 100% !important;
+        max-width: 620px !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+        background: #ffffff !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+    }
+
+    #area-impresion * {
+        visibility: visible !important;
+    }
+
+    #area-impresion .ticket-wrapper {
+        border: 2px solid #111827 !important;
+        border-radius: 8px !important;
+        box-shadow: none !important;
+        background: #ffffff !important;
+        color: #000000 !important;
+        margin: 0 auto !important;
+        width: 100% !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    #area-impresion .ticket-header {
+        background: #1c3758 !important;
+        color: #ffffff !important;
+        padding: 1.2rem 1.5rem !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    #area-impresion .ticket-header h4,
+    #area-impresion .ticket-header small,
+    #area-impresion .ticket-header div {
+        color: #ffffff !important;
+    }
+
+    #area-impresion .ticket-badge {
+        border: 1px solid #ffffff !important;
+        color: #ffffff !important;
+        background: transparent !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    #area-impresion .ticket-label {
+        color: #4b5563 !important;
+    }
+
+    #area-impresion .ticket-value {
+        color: #000000 !important;
+    }
+
+    #area-impresion .ticket-divider {
+        border-top: 2px dashed #4b5563 !important;
+    }
+
+    #area-impresion .bg-body-tertiary {
+        background-color: #f1f5f9 !important;
+        border: 1px solid #e2e8f0 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    #area-impresion .text-primary {
+        color: #0d6efd !important;
+    }
+
+    #area-impresion .text-success {
+        color: #198754 !important;
+    }
+
+    #area-impresion .ticket-barcode {
+        background: #ffffff !important;
+        border: 1px solid #000000 !important;
+    }
+
+    #area-impresion .ticket-barcode span {
+        background-color: #000000 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+}
+
