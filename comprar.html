@@ -1,83 +1,205 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" data-bs-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet"  href="./css/style2.css">
-    <title>Document</title>
+    <title>Comprar Tickets - Conf Bs As</title>
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+    <!-- Barra de Navegación -->
     <header>
-        <div class="logo">
-            <img class="imagen-logo" src="./assets/img/codoacodo.png" alt="logo">
-            <h2>Conf Bs As</h2>
-            <nav>
-                <a href="#">La Conferencia</a>
-                <a href="#" style="color: grey;">Los oradores</a>
-                <a href="#" style="color: grey;">EL lugar y la fecha</a>
-                <a href="#" style="color: grey;">Conviertete en Orador</a>
-                <a href="index.html" style="color: green;"><b>Inicio</b></a>
-            </nav>    
-        </div>        
+        <nav class="navbar navbar-expand-lg navbar-dark custom-navbar fixed-top">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                    <img class="logo-img" src="./assets/img/codoacodo.png" alt="Logo Conferencia Buenos Aires">
+                    <span>Conf Bs As</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                        <li class="nav-item">
+                            <a class="nav-link text-white-50" href="index.html#conferencia">La Conferencia</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white-50" href="index.html#oradores">Los oradores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white-50" href="index.html#lugar-fecha">El lugar y la fecha</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white-50" href="index.html#ser-orador">Conviértete en orador</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active nav-link-comprar" href="comprar.html">Comprar ticket</a>
+                        </li>
+                        <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+                            <button id="btn-theme-toggle" class="theme-toggle-btn" type="button" title="Alternar modo oscuro / claro" aria-label="Alternar modo oscuro / claro">
+                                <i id="theme-icon" class="bi bi-moon-stars-fill"></i>
+                                <span id="theme-text" class="d-lg-none">Modo Oscuro</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
-    <div id="porcentajes" class="row">
-        <div class="descuentos" id="des1" >
-            <br><h3>Estudiante</h3>
-            <p>Tiene un descuento</p>
-            <h1>80%</h1>
-            <p id="documentacion">* presentar documentación</p>
+
+    <main class="container py-4">
+        <!-- Tarjetas de Descuentos -->
+        <div class="row g-3 justify-content-center my-3" id="porcentajes">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="discount-card discount-estudiante" id="des1">
+                    <h3 class="h4 fw-bold">Estudiante</h3>
+                    <p class="text-secondary mb-1">Tiene un descuento</p>
+                    <p class="display-6 fw-bold text-primary mb-1">80%</p>
+                    <small class="text-muted">* Presentar documentación</small>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="discount-card discount-trainee" id="des2">
+                    <h3 class="h4 fw-bold">Trainee</h3>
+                    <p class="text-secondary mb-1">Tiene un descuento</p>
+                    <p class="display-6 fw-bold text-info mb-1">50%</p>
+                    <small class="text-muted">* Presentar documentación</small>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="discount-card discount-junior" id="des3">
+                    <h3 class="h4 fw-bold">Junior</h3>
+                    <p class="text-secondary mb-1">Tiene un descuento</p>
+                    <p class="display-6 fw-bold text-warning mb-1">15%</p>
+                    <small class="text-muted">* Presentar documentación</small>
+                </div>
+            </div>
         </div>
-        <div class="descuentos" id="des2">
-            <br><h3>Trainee</h3>
-            <p>Tiene un descuento</p>
-            <h1>50%</h1>
-            <p id="documentacion">* presentar documentación</p>
+
+        <!-- Encabezado de Venta -->
+        <div class="text-center my-4">
+            <p class="form-title-small text-uppercase mb-1" style="letter-spacing: 2px;">Venta</p>
+            <h1 class="h2 fw-bold">VALOR DEL TICKET $200</h1>
         </div>
-        <div class="descuentos" id="des3">
-            <br><h3>Junior</h3>
-            <p>Tiene un descuento</p>
-            <h1>15%</h1>
-            <p id="documentacion">* presentar documentación</p>
-        </div>    
-    </div>
-    <div class="venta">
-        <br><p>VENTA</p><br>
-        <h1>VALOR DEL TICKET $200</h1><br>
-    </div>
-    <div class="formulario" class="row">
-        <div >
-            <form id="formul">
-                <input type="text" placeholder="NOMBRE" id="nombre">
-                <input type="text" placeholder="APELLIDO" id="apellido">
-                <input type="email" placeholder="MAIL" id="mail" onblur="validarMail(form.mail.value)">           
-                <input type="number" placeholder="CANTIDAD" min="0" max="99" step="1" id="cantidad">
-                <select id="op">
-                    <option value="estudiante">Estudiante</option>
-                    <option value="trainee">Trainee</option>
-                    <option value="junior">Junior</option>                
-                </select><br><br>
-                <input value="Total a pagar $" disabled="true" name="total" id="total"></input><br><br>
+
+        <!-- Formulario de Compra -->
+        <div class="ticket-form-container">
+            <form id="formul" novalidate>
+                <div class="row g-3 mb-3">
+                    <div class="col-12 col-md-6">
+                        <label for="nombre" class="form-label visually-hidden">Nombre</label>
+                        <input type="text" class="form-control" placeholder="Nombre" id="nombre" required>
+                        <div class="invalid-feedback">Por favor, ingresa tu nombre.</div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <label for="apellido" class="form-label visually-hidden">Apellido</label>
+                        <input type="text" class="form-control" placeholder="Apellido" id="apellido" required>
+                        <div class="invalid-feedback">Por favor, ingresa tu apellido.</div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="mail" class="form-label visually-hidden">Correo Electrónico</label>
+                    <input type="email" class="form-control" placeholder="Correo electrónico (ej: usuario@correo.com)" id="mail" required>
+                    <div class="invalid-feedback">Ingresa una dirección de correo válida.</div>
+                </div>
+
+                <div class="row g-3 mb-4">
+                    <div class="col-12 col-md-6">
+                        <label for="cantidad" class="form-label fw-semibold small text-secondary">Cantidad</label>
+                        <input type="number" class="form-control" placeholder="Cantidad" min="1" max="99" step="1" id="cantidad" required>
+                        <div class="invalid-feedback">Ingresa una cantidad válida mayor a 0.</div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <label for="op" class="form-label fw-semibold small text-secondary">Categoría de descuento</label>
+                        <select class="form-select" id="op">
+                            <option value="estudiante" selected>Estudiante (80% desc)</option>
+                            <option value="trainee">Trainee (50% desc)</option>
+                            <option value="junior">Junior (15% desc)</option>
+                            <option value="general">General (Sin descuento)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <input type="text" class="form-control text-center input-total py-2" value="Total a pagar: $" id="total" readonly tabindex="-1">
+                </div>
+
+                <div class="row g-2">
+                    <div class="col-12 col-sm-6">
+                        <button type="button" class="btn btn-outline-secondary w-100 py-2 fw-semibold" id="borrar">
+                            <i class="bi bi-trash3 me-1"></i> Borrar
+                        </button>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <button type="button" class="btn btn-success w-100 py-2 fw-semibold" id="resumen">
+                            <i class="bi bi-calculator me-1"></i> Resumen
+                        </button>
+                    </div>
+                    <div class="col-12 mt-2">
+                        <button type="button" class="btn btn-primary w-100 py-2 fw-bold d-none" id="btn-confirmar-compra">
+                            <i class="bi bi-credit-card me-1"></i> Confirmar y Comprar
+                        </button>
+                    </div>
+                </div>
             </form>
         </div>
-        <button id="borrar">Borrar</button>
-        <button id="resumen">Resumen</button> 
-    </div><br>
-    
-    <footer>        
-        <div>
-            <label><a href="#">Preguntas Frecuentes</a></label>
-            <label><a href="#">Contáctanos</a></label> 
-            <label><a href="#">Prensa</a></label> 
-            <label><a href="#">Conferencias</a></label> 
-            <label><a href="#">Términos y Condiciones</a></label> 
-            <label><a href="#">Privacidad</a></label> 
-            <label><a href="#">Estudiantes</a> </label> 
+    </main>
+
+    <!-- Modal de Confirmación de Ticket -->
+    <div class="modal fade" id="ticketModal" tabindex="-1" aria-labelledby="ticketModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title fw-bold" id="ticketModalLabel">
+                        <i class="bi bi-ticket-perforated-fill me-2 text-warning"></i> Comprobante de Entrada
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-3 p-md-4" id="modalTicketBody">
+                    <!-- Contenido dinámico generado por operaciones.js -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" onclick="imprimirComprobante()">
+                        <i class="bi bi-printer me-1"></i> Imprimir comprobante
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenedor exclusivo para vista previa de impresión / Guardar como PDF -->
+    <div id="area-impresion"></div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="d-flex flex-wrap justify-content-center justify-content-lg-between align-items-center text-center gap-2">
+                <a href="#">Preguntas frecuentes</a>
+                <a href="#">Contáctanos</a>
+                <a href="#">Prensa</a>
+                <a href="#">Conferencias</a>
+                <a href="#">Términos y condiciones</a>
+                <a href="#">Privacidad</a>
+                <a href="#">Estudiantes</a>
+            </div>
         </div>
     </footer>
-    <script src="js/operaciones.js"></script>
-    <script src="js/validarMail.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap 5.3 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Script de Modo Oscuro / Claro -->
+    <script src="./js/theme.js"></script>
+    <!-- Script de Validación de Mail -->
+    <script src="./js/validarMail.js"></script>
+    <!-- Script de Operaciones y Cálculo -->
+    <script src="./js/operaciones.js"></script>
 </body>
 </html>
